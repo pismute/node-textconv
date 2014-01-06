@@ -1,0 +1,51 @@
+{
+  "name": "node-textconv",
+  "version": "0.0.1",
+  "main": "./out/lib/textconv.js",
+  "bin": {
+    "textconv": "./out/bin/textconv"
+  },
+  "description": "textconverter for git.",
+  "homepage": "https://github.com/pismute/node-textconv",
+  "bugs": {
+    "url": "https://github.com/pismute/node-textconv/issues"
+  },
+  "author": "Changwoo Park <pismute@gmail.com> (https://github.com/pismute)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pismute/node-textconv"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-coffeelint": "~0.0.7",
+    "grunt-simple-mocha": "~0.4.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "should": "~1.2.2",
+    "matchdep": "~0.1.2",
+    "mocha-cakes": "~0.9.0",
+    "grunt": "~0.4.1",
+    "grunt-shell": "~0.6.1"
+  },
+  "dependencies": {
+    "node-zip": "~1.0.1",
+    "commander": "~2.1.0",
+    "xlsx": "~0.3.6",
+    "lodash": "~2.4.1"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "git",
+    "textconv",
+    "difftool"
+  ],
+  "license": "MIT"
+}

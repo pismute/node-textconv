@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+/*
+
+nodex-textconv
+https://github.com/pismute/node-textconv
+
+Licensed under the MIT license.
+*/
+
+(function() {
+  var grunt, program, textconv;
+
+  program = require('commander');
+  textconv = require('../lib/textconv');
+
+  program
+  .version('0.0.1')
+  .usage('[options] <file>')
+  .option('--xlsx', '.xlsx to text')
+  .parse(process.argv);
+
+  var file = program.args[0]
+
+  if (program.xlsx) {
+    textconv.xlsx(file);
+  }
+
+}).call(this);
