@@ -116,4 +116,9 @@ module.exports = (grunt)->
     'shell:npm-link'
   ]
 
+  grunt.registerTask 'publish', [
+    'prepare'
+    'shell:npm-publish'
+  ]
+
 
