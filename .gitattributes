@@ -1,0 +1,4 @@
+text=auto
+
+*.xlsx   diff=xlsx
+*.XLSX   diff=xlsx

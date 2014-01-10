@@ -1,6 +1,6 @@
 'use strict'
 
-textconv = require '../lib/textconv'
+{exec, textconv, which, find} = require '../lib/difftool'
 
 ###
 ======== A Handy Little Mocha Reference ========
@@ -52,31 +52,38 @@ j
   user.should.be.a('object').and.have.property('name', 'tj')
 ###
 
-xlsx = textconv.xlsx
+os = require 'os'
+path = require 'path'
 
-describe 'textconv', ()->
-  describe 'should', ()->
-    it 'convert xlsx to markdown based csv', ()->
-      xlsx('src/test/data/the-attorney.xlsx', (err, data)->
-        data.should.be.equal(data, """
-          ### staff
+require('when/monitor/console')
 
-          ``` csv
-          "staff",,,
-          ,"Director","Woo-seok Yang",
-          ,"Writers","Yoon Hyeon-ho","Woo-seok Yang"
-          ```
-
-          ### cast
-
-          ``` csv
-          "cast",,
-          ,"Yeong-ae Kim","Choi Soon-ae"
-          ,"Do Won Kwak","Cha Dong-yeong"
-          ,"Dal-su Oh","Park Dong-ho"
-          ,"Kang-ho Song","Song Woo-seok"
-          ,"Young-chang Song","Judge"
-          ,"Si-wan Yim","Jin-woo"
-          ```
-        """)
-      )
+describe "difftool's", ()->
+  describe 'exec', ()->
+    it 'should grap out the stdout from cmd', (done)->
+      exec('node --version')
+        .then (stdout)->
+          stdout.trim().should.be.eql(process.version)
+          done()
+    it 'should grap out error', (done)->
+      exec('isnotnode')
+        .catch (error)->
+          #console.log( JSON.stringify error, '  ', false)
+          error.code.should.not.be.eql(0)
+          done()
+  describe 'which', ()->
+    describe 'should', ()->
+      it 'find src directory', (done)->
+        which('src')
+          .then (result)->
+            done()
+      it 'not find nothing-command', (done)->
+        which('nothing-command')
+          .catch (error)->
+            done()
+  describe 'textconv', ()->
+    it 'should binary filename to text filename', (done)->
+      textconv('src/test/data/the-attorney.xlsx')
+        .then (result)->
+          expected = path.resolve(os.tmpdir(), 'src/test/data/the-attorney.xlsx.textconv')
+          result.should.be.eql(expected)
+          done()

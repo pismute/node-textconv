@@ -21,5 +21,22 @@ Define your differences in `.gitattributes`:
 
 You are ready to compare versions.
 
+### difftool wrapper
+
+When we want to use a external diff tool, git doen't help us to use textconv feature; Therefore, our wrapper script should grasp textconv configuration and use it. This difftool wrapper supports diffmerge only.
+
+If you are on diffmerge, change configation like this:
+
+```
+git config --global diff.tool=diffmerge
+git config --global difftool.diffmerge.cmd "difftool diffmerge \$LOCAL \$REMOTE"
+```
+
+This configuration for `git difftool` only. SourceTree require additional configation:
+
+```
+git config --global difftool.sourcetree.cmd "difftool diffmerge \$LOCAL \$REMOTE"
+```
+
 ## License
-Copyright (c) 2014 Changwoo Park. Licensed under the MIT license.
+Copyright (c) 2014+ Changwoo Park. Licensed under the MIT license.

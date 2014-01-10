@@ -3,7 +3,7 @@
 node-textconv
 https://github.com/pismute/node-textconv
 
-Copyright (c) 2013 Changwoo Park
+Copyright (c) 2014+ Changwoo Park
 Licensed under the MIT license.
 
 ###
