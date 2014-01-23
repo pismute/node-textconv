@@ -23,6 +23,8 @@ module.exports = (grunt)->
           level: 'error'
         max_line_length:
           level: 'warn'
+        indentation:
+          level: 'warn'
     coffee:
       lib:
         expand: true
