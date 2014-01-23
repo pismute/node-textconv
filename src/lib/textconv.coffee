@@ -11,7 +11,6 @@ Licensed under the MIT license.
 'use strict'
 
 fs = require('fs')
-_ = require('lodash')
 sheetJs = require('xlsx')
 
 xlsx = (mixed, cb = xlsx.defaultCallback, transform = transformer.default)->

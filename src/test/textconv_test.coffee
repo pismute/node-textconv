@@ -1,7 +1,6 @@
 'use strict'
 
 textconv = require '../lib/textconv'
-_ = require('lodash')
 
 ###
 ======== A Handy Little Mocha Reference ========
