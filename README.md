@@ -10,6 +10,9 @@ Put a textconver for xlsx in your configuration:
 
 ```
 git config --global diff.xlsx.textconv "textconv --xlsx"
+
+# for cache
+git config --global diff.xlsx.cachetextconv true
 ```
 
 Define your differences in `.gitattributes`:
@@ -28,7 +31,7 @@ When we want to use a external diff tool, git doen't help us to use textconv fea
 If you are on diffmerge, change configation like this:
 
 ```
-git config --global diff.tool=diffmerge
+git config --global diff.tool diffmerge
 git config --global difftool.diffmerge.cmd "difftool diffmerge \$LOCAL \$REMOTE"
 ```
 
