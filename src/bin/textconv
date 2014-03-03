@@ -19,10 +19,10 @@ Licensed under the MIT license.
   .option('--xlsx', '.xlsx to text')
   .parse(process.argv);
 
-  var file = program.args[0]
+  var files = program.args;
 
   if (program.xlsx) {
-    textconv.xlsx(file);
+    textconv.xlsx(files);
   }
 
 }).call(this);
