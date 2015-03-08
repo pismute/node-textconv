@@ -44,9 +44,9 @@ This file has three sheets of staff, cast, description. This script easily conve
 
 This file has three sheets:
 
-![staff](https://raw2.github.com/pismute/node-textconv/master/doc/image/staff.png)
-![cast](https://raw2.github.com/pismute/node-textconv/master/doc/image/cast.png)
-![description](https://raw2.github.com/pismute/node-textconv/master/doc/image/description.png)
+![staff](https://raw.githubusercontent.com/pismute/node-textconv/master/doc/image/staff.png)
+![cast](https://raw.githubusercontent.com/pismute/node-textconv/master/doc/image/cast.png)
+![description](https://raw.githubusercontent.com/pismute/node-textconv/master/doc/image/description.png)
 
 **textconv** convert it to text:
 
@@ -127,7 +127,7 @@ git config --global difftool.diffmerge.cmd "difftool diffmerge \$LOCAL \$REMOTE"
 
 If you run `git difftool 4515ef2 src/test/data/the-attorney.xlsx` after clone this repository, then you can see diffmerge window:
 
-![diffmerge](https://raw2.github.com/pismute/node-textconv/master/doc/image/difftool-diffmerge.png)
+![diffmerge](https://raw.githubusercontent.com/pismute/node-textconv/master/doc/image/difftool-diffmerge.png)
 
 This settings for `git difftool` only. [SourceTree](http://www.sourcetreeapp.com/) require additional configuration:
 
